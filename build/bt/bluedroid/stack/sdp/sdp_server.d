@@ -24,7 +24,7 @@ bluedroid/stack/sdp/sdp_server.o: \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/alloca.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/heap/include/esp_heap_caps.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/heap/include/multi_heap.h \
- /home/gardin/Documents/dev/ESP-MDF/ble_mesh/build/include/sdkconfig.h \
+ /home/gardin/Documents/dev/ble_mesh/build/include/sdkconfig.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/bt/bluedroid/stack/include/stack/btu.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/bt/bluedroid/common/include/common/bt_target.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/bt/bluedroid/stack/include/stack/dyn_mem.h \
@@ -98,7 +98,7 @@ bluedroid/stack/sdp/sdp_server.o: \
 
 /home/gardin/esp/esp-mdf/esp-idf/components/heap/include/multi_heap.h:
 
-/home/gardin/Documents/dev/ESP-MDF/ble_mesh/build/include/sdkconfig.h:
+/home/gardin/Documents/dev/ble_mesh/build/include/sdkconfig.h:
 
 /home/gardin/esp/esp-mdf/esp-idf/components/bt/bluedroid/stack/include/stack/btu.h:
 

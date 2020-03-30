@@ -16,7 +16,7 @@ bluedroid/stack/smp/p_256_multprecision.o: \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/sys/cdefs.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/sys/string.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/bt/bluedroid/common/include/common/bt_target.h \
- /home/gardin/Documents/dev/ESP-MDF/ble_mesh/build/include/sdkconfig.h \
+ /home/gardin/Documents/dev/ble_mesh/build/include/sdkconfig.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/bt/bluedroid/stack/include/stack/bt_types.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/stdint.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/sys/_intsup.h \
@@ -72,7 +72,7 @@ bluedroid/stack/smp/p_256_multprecision.o: \
 
 /home/gardin/esp/esp-mdf/esp-idf/components/bt/bluedroid/common/include/common/bt_target.h:
 
-/home/gardin/Documents/dev/ESP-MDF/ble_mesh/build/include/sdkconfig.h:
+/home/gardin/Documents/dev/ble_mesh/build/include/sdkconfig.h:
 
 /home/gardin/esp/esp-mdf/esp-idf/components/bt/bluedroid/stack/include/stack/bt_types.h:
 

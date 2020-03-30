@@ -30,7 +30,7 @@ bluedroid/btc/core/btc_util.o: \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/sys/_intsup.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/bt/bluedroid/common/include/common/bt_defs.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/bt/bluedroid/common/include/common/bt_trace.h \
- /home/gardin/Documents/dev/ESP-MDF/ble_mesh/build/include/sdkconfig.h \
+ /home/gardin/Documents/dev/ble_mesh/build/include/sdkconfig.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/log/include/esp_log.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/esp32/include/rom/ets_sys.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/soc.h \
@@ -104,7 +104,7 @@ bluedroid/btc/core/btc_util.o: \
 
 /home/gardin/esp/esp-mdf/esp-idf/components/bt/bluedroid/common/include/common/bt_trace.h:
 
-/home/gardin/Documents/dev/ESP-MDF/ble_mesh/build/include/sdkconfig.h:
+/home/gardin/Documents/dev/ble_mesh/build/include/sdkconfig.h:
 
 /home/gardin/esp/esp-mdf/esp-idf/components/log/include/esp_log.h:
 

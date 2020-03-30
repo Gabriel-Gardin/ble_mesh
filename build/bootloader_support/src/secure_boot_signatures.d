@@ -1,6 +1,6 @@
 src/secure_boot_signatures.o: \
  /home/gardin/esp/esp-mdf/esp-idf/components/bootloader_support/src/secure_boot_signatures.c \
- /home/gardin/Documents/dev/ESP-MDF/ble_mesh/build/include/sdkconfig.h \
+ /home/gardin/Documents/dev/ble_mesh/build/include/sdkconfig.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/bootloader_support/include_bootloader/bootloader_flash.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/stdint.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/machine/_default_types.h \
@@ -48,7 +48,7 @@ src/secure_boot_signatures.o: \
  /home/gardin/esp/esp-mdf/esp-idf/components/mbedtls/mbedtls/include/mbedtls/check_config.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/limits.h
 
-/home/gardin/Documents/dev/ESP-MDF/ble_mesh/build/include/sdkconfig.h:
+/home/gardin/Documents/dev/ble_mesh/build/include/sdkconfig.h:
 
 /home/gardin/esp/esp-mdf/esp-idf/components/bootloader_support/include_bootloader/bootloader_flash.h:
 

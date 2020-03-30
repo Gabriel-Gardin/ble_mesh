@@ -8,7 +8,7 @@ bluedroid/bta/gatt/bta_gatt_common.o: \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/sys/_intsup.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/bt/bluedroid/stack/gatt/include/gatt_int.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/bt/bluedroid/common/include/common/bt_target.h \
- /home/gardin/Documents/dev/ESP-MDF/ble_mesh/build/include/sdkconfig.h \
+ /home/gardin/Documents/dev/ble_mesh/build/include/sdkconfig.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/bt/bluedroid/stack/include/stack/dyn_mem.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/bt/bluedroid/common/include/common/bt_trace.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/stdio.h \
@@ -120,7 +120,7 @@ bluedroid/bta/gatt/bta_gatt_common.o: \
 
 /home/gardin/esp/esp-mdf/esp-idf/components/bt/bluedroid/common/include/common/bt_target.h:
 
-/home/gardin/Documents/dev/ESP-MDF/ble_mesh/build/include/sdkconfig.h:
+/home/gardin/Documents/dev/ble_mesh/build/include/sdkconfig.h:
 
 /home/gardin/esp/esp-mdf/esp-idf/components/bt/bluedroid/stack/include/stack/dyn_mem.h:
 

@@ -15,7 +15,7 @@ src/esp_image_format.o: \
  /home/gardin/esp/esp-mdf/esp-idf/components/esp32/include/esp_err.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/bootloader_support/include/esp_flash_partitions.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/esp32/include/esp_flash_data_types.h \
- /home/gardin/Documents/dev/ESP-MDF/ble_mesh/build/bootloader/../include/sdkconfig.h \
+ /home/gardin/Documents/dev/ble_mesh/build/bootloader/../include/sdkconfig.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/bootloader_support/include/esp_secure_boot.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/efuse_reg.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/soc.h \
@@ -58,7 +58,7 @@ src/esp_image_format.o: \
 
 /home/gardin/esp/esp-mdf/esp-idf/components/esp32/include/esp_flash_data_types.h:
 
-/home/gardin/Documents/dev/ESP-MDF/ble_mesh/build/bootloader/../include/sdkconfig.h:
+/home/gardin/Documents/dev/ble_mesh/build/bootloader/../include/sdkconfig.h:
 
 /home/gardin/esp/esp-mdf/esp-idf/components/bootloader_support/include/esp_secure_boot.h:
 

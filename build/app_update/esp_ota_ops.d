@@ -26,7 +26,7 @@ esp_ota_ops.o: \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/string.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/sys/string.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/platform_include/assert.h \
- /home/gardin/Documents/dev/ESP-MDF/ble_mesh/build/include/sdkconfig.h \
+ /home/gardin/Documents/dev/ble_mesh/build/include/sdkconfig.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/assert.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/freertos/include/freertos/FreeRTOS.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h \
@@ -152,7 +152,7 @@ esp_ota_ops.o: \
 
 /home/gardin/esp/esp-mdf/esp-idf/components/newlib/platform_include/assert.h:
 
-/home/gardin/Documents/dev/ESP-MDF/ble_mesh/build/include/sdkconfig.h:
+/home/gardin/Documents/dev/ble_mesh/build/include/sdkconfig.h:
 
 /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/assert.h:
 

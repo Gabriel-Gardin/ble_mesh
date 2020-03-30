@@ -38,7 +38,7 @@ libcoap/src/coap_time.o: \
  /home/gardin/esp/esp-mdf/esp-idf/components/vfs/include/sys/ioctl.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/platform_include/sys/select.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/esp32/include/esp_task.h \
- /home/gardin/Documents/dev/ESP-MDF/ble_mesh/build/include/sdkconfig.h \
+ /home/gardin/Documents/dev/ble_mesh/build/include/sdkconfig.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/freertos/include/freertos/xtensa_config.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/esp32/include/xtensa/hal.h \
@@ -198,7 +198,7 @@ libcoap/src/coap_time.o: \
 
 /home/gardin/esp/esp-mdf/esp-idf/components/esp32/include/esp_task.h:
 
-/home/gardin/Documents/dev/ESP-MDF/ble_mesh/build/include/sdkconfig.h:
+/home/gardin/Documents/dev/ble_mesh/build/include/sdkconfig.h:
 
 /home/gardin/esp/esp-mdf/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h:
 

@@ -16,7 +16,7 @@ bluedroid/osi/mutex.o: \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/stdint.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/sys/_intsup.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h \
- /home/gardin/Documents/dev/ESP-MDF/ble_mesh/build/include/sdkconfig.h \
+ /home/gardin/Documents/dev/ble_mesh/build/include/sdkconfig.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/freertos/include/freertos/xtensa_config.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/esp32/include/xtensa/hal.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/esp32/include/xtensa/config/core.h \
@@ -116,7 +116,7 @@ bluedroid/osi/mutex.o: \
 
 /home/gardin/esp/esp-mdf/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h:
 
-/home/gardin/Documents/dev/ESP-MDF/ble_mesh/build/include/sdkconfig.h:
+/home/gardin/Documents/dev/ble_mesh/build/include/sdkconfig.h:
 
 /home/gardin/esp/esp-mdf/esp-idf/components/freertos/include/freertos/xtensa_config.h:
 

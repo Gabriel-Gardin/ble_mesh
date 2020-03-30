@@ -22,7 +22,7 @@ bt.o: /home/gardin/esp/esp-mdf/esp-idf/components/bt/bt.c \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/sys/stdio.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/string.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/sys/string.h \
- /home/gardin/Documents/dev/ESP-MDF/ble_mesh/build/include/sdkconfig.h \
+ /home/gardin/Documents/dev/ble_mesh/build/include/sdkconfig.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/heap/include/esp_heap_caps.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/stdint.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/sys/_intsup.h \
@@ -153,7 +153,7 @@ bt.o: /home/gardin/esp/esp-mdf/esp-idf/components/bt/bt.c \
 
 /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/sys/string.h:
 
-/home/gardin/Documents/dev/ESP-MDF/ble_mesh/build/include/sdkconfig.h:
+/home/gardin/Documents/dev/ble_mesh/build/include/sdkconfig.h:
 
 /home/gardin/esp/esp-mdf/esp-idf/components/heap/include/esp_heap_caps.h:
 

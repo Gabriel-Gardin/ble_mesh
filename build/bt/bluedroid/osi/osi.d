@@ -17,7 +17,7 @@ bluedroid/osi/osi.o: \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/machine/_types.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/sys/lock.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h \
- /home/gardin/Documents/dev/ESP-MDF/ble_mesh/build/include/sdkconfig.h \
+ /home/gardin/Documents/dev/ble_mesh/build/include/sdkconfig.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/freertos/include/freertos/xtensa_config.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/esp32/include/xtensa/hal.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/esp32/include/xtensa/config/core.h \
@@ -119,7 +119,7 @@ bluedroid/osi/osi.o: \
 
 /home/gardin/esp/esp-mdf/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h:
 
-/home/gardin/Documents/dev/ESP-MDF/ble_mesh/build/include/sdkconfig.h:
+/home/gardin/Documents/dev/ble_mesh/build/include/sdkconfig.h:
 
 /home/gardin/esp/esp-mdf/esp-idf/components/freertos/include/freertos/xtensa_config.h:
 

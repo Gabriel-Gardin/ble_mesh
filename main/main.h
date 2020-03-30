@@ -1,10 +1,13 @@
+#include "esp_err.h"
+#include "ibeacon_api.h"
+#include "freertos/task.h"
+#include "freertos/FreeRTOS.h"
+#include "freertos/semphr.h"
+
+
+
 static const char* DEMO_TAG = "IBEACON_DEMO";
 static const char *TAG = "mqtt_examples";
-
-#define BUILT_IN_LED 22
-#define MAX_LAST_SENDED_TIME 1
-#define MAX_ARRAY_SIZE 300
-#define SENDED_BEACON_ARRAY_TERMINATOR_ADDR "cococo"
 
 typedef struct{  //Estrutura de dados que marca o endereço do beacon e o momento em que foi enviado.
 
@@ -25,9 +28,9 @@ typedef struct {
 
 QueueHandle_t ble_data_queue;
 
-static TaskHandle_t xTaskToNotify = NULL;
+
 static TaskHandle_t sender_task_handle = NULL;
-static TaskHandle_t array_controler_handle = NULL;
+static TaskHandle_t beacon_sended_controller_handle = NULL;
 
 
 

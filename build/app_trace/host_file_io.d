@@ -25,7 +25,7 @@ host_file_io.o: \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/sys/sched.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/sys/stdio.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/platform_include/assert.h \
- /home/gardin/Documents/dev/ESP-MDF/ble_mesh/build/include/sdkconfig.h \
+ /home/gardin/Documents/dev/ble_mesh/build/include/sdkconfig.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/stdlib.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/machine/stdlib.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/alloca.h \
@@ -131,7 +131,7 @@ host_file_io.o: \
 
 /home/gardin/esp/esp-mdf/esp-idf/components/newlib/platform_include/assert.h:
 
-/home/gardin/Documents/dev/ESP-MDF/ble_mesh/build/include/sdkconfig.h:
+/home/gardin/Documents/dev/ble_mesh/build/include/sdkconfig.h:
 
 /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/stdlib.h:
 

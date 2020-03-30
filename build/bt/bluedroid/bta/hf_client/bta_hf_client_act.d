@@ -2,7 +2,7 @@ bluedroid/bta/hf_client/bta_hf_client_act.o: \
  /home/gardin/esp/esp-mdf/esp-idf/components/bt/bluedroid/bta/hf_client/bta_hf_client_act.c \
  /home/gardin/esp/esp-mdf/esp-idf/components/bt/bluedroid/bta/include/bta/bta_api.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/bt/bluedroid/common/include/common/bt_target.h \
- /home/gardin/Documents/dev/ESP-MDF/ble_mesh/build/include/sdkconfig.h \
+ /home/gardin/Documents/dev/ble_mesh/build/include/sdkconfig.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/bt/bluedroid/stack/include/stack/bt_types.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/stdint.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/machine/_default_types.h \
@@ -120,7 +120,7 @@ bluedroid/bta/hf_client/bta_hf_client_act.o: \
 
 /home/gardin/esp/esp-mdf/esp-idf/components/bt/bluedroid/common/include/common/bt_target.h:
 
-/home/gardin/Documents/dev/ESP-MDF/ble_mesh/build/include/sdkconfig.h:
+/home/gardin/Documents/dev/ble_mesh/build/include/sdkconfig.h:
 
 /home/gardin/esp/esp-mdf/esp-idf/components/bt/bluedroid/stack/include/stack/bt_types.h:
 

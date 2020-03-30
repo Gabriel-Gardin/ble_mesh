@@ -26,7 +26,7 @@ bluedroid/stack/btu/btu_task.o: \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/sys/stdio.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/esp32/include/esp_err.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/platform_include/assert.h \
- /home/gardin/Documents/dev/ESP-MDF/ble_mesh/build/include/sdkconfig.h \
+ /home/gardin/Documents/dev/ble_mesh/build/include/sdkconfig.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/stdlib.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/machine/stdlib.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/alloca.h \
@@ -176,7 +176,7 @@ bluedroid/stack/btu/btu_task.o: \
 
 /home/gardin/esp/esp-mdf/esp-idf/components/newlib/platform_include/assert.h:
 
-/home/gardin/Documents/dev/ESP-MDF/ble_mesh/build/include/sdkconfig.h:
+/home/gardin/Documents/dev/ble_mesh/build/include/sdkconfig.h:
 
 /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/stdlib.h:
 

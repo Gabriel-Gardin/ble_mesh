@@ -9,7 +9,7 @@ esp32/rtc_sleep.o: \
  /home/gardin/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/dport_access.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/esp32/include/esp_attr.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/esp32/include/esp_dport_access.h \
- /home/gardin/Documents/dev/ESP-MDF/ble_mesh/build/bootloader/../include/sdkconfig.h \
+ /home/gardin/Documents/dev/ble_mesh/build/bootloader/../include/sdkconfig.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/uart_reg.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/esp32/include/xtensa/xtruntime.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/esp32/include/xtensa/config/core.h \
@@ -46,7 +46,7 @@ esp32/rtc_sleep.o: \
 
 /home/gardin/esp/esp-mdf/esp-idf/components/esp32/include/esp_dport_access.h:
 
-/home/gardin/Documents/dev/ESP-MDF/ble_mesh/build/bootloader/../include/sdkconfig.h:
+/home/gardin/Documents/dev/ble_mesh/build/bootloader/../include/sdkconfig.h:
 
 /home/gardin/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/uart_reg.h:
 

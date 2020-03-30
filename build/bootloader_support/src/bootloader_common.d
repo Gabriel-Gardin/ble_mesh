@@ -1,7 +1,7 @@
 src/bootloader_common.o: \
  /home/gardin/esp/esp-mdf/esp-idf/components/bootloader_support/src/bootloader_common.c \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/platform_include/assert.h \
- /home/gardin/Documents/dev/ESP-MDF/ble_mesh/build/include/sdkconfig.h \
+ /home/gardin/Documents/dev/ble_mesh/build/include/sdkconfig.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/stdlib.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/machine/ieeefp.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/_ansi.h \
@@ -60,7 +60,7 @@ src/bootloader_common.o: \
 
 /home/gardin/esp/esp-mdf/esp-idf/components/newlib/platform_include/assert.h:
 
-/home/gardin/Documents/dev/ESP-MDF/ble_mesh/build/include/sdkconfig.h:
+/home/gardin/Documents/dev/ble_mesh/build/include/sdkconfig.h:
 
 /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/stdlib.h:
 

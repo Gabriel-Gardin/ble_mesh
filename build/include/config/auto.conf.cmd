@@ -39,7 +39,7 @@ deps_config := \
 	/home/gardin/esp/esp-mdf/esp-idf/components/wear_levelling/Kconfig \
 	/home/gardin/esp/esp-mdf/esp-idf/components/bootloader/Kconfig.projbuild \
 	/home/gardin/esp/esp-mdf/esp-idf/components/esptool_py/Kconfig.projbuild \
-	/home/gardin/Documents/dev/ESP-MDF/ble_mesh/main/Kconfig.projbuild \
+	/home/gardin/Documents/dev/ble_mesh/main/Kconfig.projbuild \
 	/home/gardin/esp/esp-mdf/esp-idf/components/partition_table/Kconfig.projbuild \
 	/home/gardin/esp/esp-mdf/esp-idf/Kconfig
 

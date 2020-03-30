@@ -22,7 +22,7 @@ bluedroid/stack/l2cap/l2c_link.o: \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/stdint.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/sys/_intsup.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/bt/bluedroid/common/include/common/bt_target.h \
- /home/gardin/Documents/dev/ESP-MDF/ble_mesh/build/include/sdkconfig.h \
+ /home/gardin/Documents/dev/ble_mesh/build/include/sdkconfig.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/bt/bluedroid/stack/include/stack/bt_types.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/bt/bluedroid/stack/include/stack/dyn_mem.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/bt/bluedroid/common/include/common/bt_trace.h \
@@ -167,7 +167,7 @@ bluedroid/stack/l2cap/l2c_link.o: \
 
 /home/gardin/esp/esp-mdf/esp-idf/components/bt/bluedroid/common/include/common/bt_target.h:
 
-/home/gardin/Documents/dev/ESP-MDF/ble_mesh/build/include/sdkconfig.h:
+/home/gardin/Documents/dev/ble_mesh/build/include/sdkconfig.h:
 
 /home/gardin/esp/esp-mdf/esp-idf/components/bt/bluedroid/stack/include/stack/bt_types.h:
 

@@ -7,7 +7,7 @@ esp_ble_scan_params_t ble_scan_params = {
     .scan_filter_policy     = BLE_SCAN_FILTER_ALLOW_ALL,
     .scan_interval          = 0x70, //Faz um scan 70 ms dps do ultimo scan acabar
     .scan_window            = 0x30, //Duração do scan.
-    .scan_duplicate         = BLE_SCAN_DUPLICATE_ENABLE
+    .scan_duplicate         = BLE_SCAN_DUPLICATE_DISABLE
 };
 
 static const char* DEMO_TAG = "IBEACON_DEMO";

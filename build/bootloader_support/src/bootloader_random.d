@@ -17,7 +17,7 @@ src/bootloader_random.o: \
  /home/gardin/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/soc.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/esp32/include/esp_assert.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/platform_include/assert.h \
- /home/gardin/Documents/dev/ESP-MDF/ble_mesh/build/include/sdkconfig.h \
+ /home/gardin/Documents/dev/ble_mesh/build/include/sdkconfig.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/stdlib.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/machine/ieeefp.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/_ansi.h \
@@ -110,7 +110,7 @@ src/bootloader_random.o: \
 
 /home/gardin/esp/esp-mdf/esp-idf/components/newlib/platform_include/assert.h:
 
-/home/gardin/Documents/dev/ESP-MDF/ble_mesh/build/include/sdkconfig.h:
+/home/gardin/Documents/dev/ble_mesh/build/include/sdkconfig.h:
 
 /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/stdlib.h:
 

@@ -1,7 +1,7 @@
 bluedroid/osi/future.o: \
  /home/gardin/esp/esp-mdf/esp-idf/components/bt/bluedroid/osi/future.c \
  /home/gardin/esp/esp-mdf/esp-idf/components/bt/bluedroid/common/include/common/bt_trace.h \
- /home/gardin/Documents/dev/ESP-MDF/ble_mesh/build/include/sdkconfig.h \
+ /home/gardin/Documents/dev/ble_mesh/build/include/sdkconfig.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/stdio.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/_ansi.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/newlib.h \
@@ -93,7 +93,7 @@ bluedroid/osi/future.o: \
 
 /home/gardin/esp/esp-mdf/esp-idf/components/bt/bluedroid/common/include/common/bt_trace.h:
 
-/home/gardin/Documents/dev/ESP-MDF/ble_mesh/build/include/sdkconfig.h:
+/home/gardin/Documents/dev/ble_mesh/build/include/sdkconfig.h:
 
 /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/stdio.h:
 

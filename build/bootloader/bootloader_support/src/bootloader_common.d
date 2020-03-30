@@ -1,6 +1,6 @@
 src/bootloader_common.o: \
  /home/gardin/esp/esp-mdf/esp-idf/components/bootloader_support/src/bootloader_common.c \
- /home/gardin/Documents/dev/ESP-MDF/ble_mesh/build/bootloader/../include/sdkconfig.h \
+ /home/gardin/Documents/dev/ble_mesh/build/bootloader/../include/sdkconfig.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/esp32/include/esp_err.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/log/include/esp_log.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/esp32/include/rom/ets_sys.h \
@@ -31,7 +31,7 @@ src/bootloader_common.o: \
  /home/gardin/esp/esp-mdf/esp-idf/components/bootloader_support/include/esp_flash_partitions.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/bootloader_support/include_bootloader/bootloader_sha.h
 
-/home/gardin/Documents/dev/ESP-MDF/ble_mesh/build/bootloader/../include/sdkconfig.h:
+/home/gardin/Documents/dev/ble_mesh/build/bootloader/../include/sdkconfig.h:
 
 /home/gardin/esp/esp-mdf/esp-idf/components/esp32/include/esp_err.h:
 

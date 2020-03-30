@@ -5,68 +5,21 @@
  * 
 */
 
-#include "ibeacon_api.h"
 #include "mesh_wifi.h"
-#include "freertos/task.h"
-#include "freertos/FreeRTOS.h"
-#include "freertos/semphr.h"
 #include "mdf_common.h"
 #include "mesh_mqtt_handle.h"
 #include "mwifi.h"
 #include "mdf_common.h"
-#include "esp_err.h"
 #include "driver/gpio.h"
+#include "main.h"
 
-
-static const char* DEMO_TAG = "IBEACON_DEMO";
-static const char *TAG = "mqtt_examples";
 
 #define BUILT_IN_LED 22
-#define MAX_LAST_SENDED_TIME 1000
+#define MAX_LAST_SENDED_TIME 2000
 #define MAX_ARRAY_SIZE 300
-#define SENDED_BEACON_ARRAY_TERMINATOR_ADDR "cococo"
+#define ARRAY_CLEANER_DELAY 5000
 
-typedef struct{  //Estrutura de dados que marca o endereço do beacon e o momento em que foi enviado.
-
-    esp_bd_addr_t addr;
-    int     sended_time;
-
-}bt_addr_time;
-
-typedef struct {
-    int beacon_rssi;
-    int major;
-    int minor;
-    int bat_level;
-    int mesh_deep;
-    esp_bd_addr_t addr;
-
-} bledata;
-
-QueueHandle_t ble_data_queue;
-
-static TaskHandle_t xTaskToNotify = NULL;
-
-
-static TaskHandle_t sender_task_handle = NULL;
-static TaskHandle_t beacon_sended_controller_handle = NULL;
-
-
-
-int currently_array_size = 0;
-bt_addr_time sended_beacons[MAX_ARRAY_SIZE];
-
-
-void sender_task(void *pVparamenters);
-void receive_ble_data(esp_ble_gap_cb_param_t *ble_adv_data);
-void delete_beacon_from_array(int index);
-void beacon_sended_controller(void *pVparameters);
-void update_array();
-void add_data_to_arr(bt_addr_time *data, int time, esp_bd_addr_t addr, bool new_beacon);
-esp_err_t set_led_state(bool state);
-bool is_beacon_recently_sended(esp_bd_addr_t addr);
-void disconected_led();
-bool array_is_equal(uint8_t *arr1, uint8_t *arr2, size_t tamanho);
+SemaphoreHandle_t xSemaphore = NULL;
 
 
 void app_main()
@@ -74,7 +27,7 @@ void app_main()
     ble_data_queue = xQueueCreate(10, sizeof(bledata)); //Queue para enviar dados a serem enviados pela rede mesh.
     init_wifi_mesh();
     xTaskCreate(sender_task, "Sender_task", 8096, NULL, 6, &sender_task_handle);
-    xTaskCreate(beacon_sended_controller, "controller", 8096, NULL, 6, &beacon_sended_controller_handle);
+    xTaskCreate(beacon_sended_controller, "controller", 8096, NULL, 7, &beacon_sended_controller_handle);
     vTaskDelay(10000);
     ble_ibeacon_init();
 }
@@ -82,6 +35,8 @@ void app_main()
 
 void sender_task(void *pVparamenters)
 {
+	xSemaphore = xSemaphoreCreateMutex();
+
     gpio_pad_select_gpio(BUILT_IN_LED);
     /* Set the GPIO as a push/pull output */
     gpio_set_direction(BUILT_IN_LED, GPIO_MODE_OUTPUT);
@@ -107,8 +62,8 @@ void sender_task(void *pVparamenters)
 
         else if(xQueueReceive(ble_data_queue, &data, pdMS_TO_TICKS(1000)) == true)
         {
-            size = asprintf(&str_data, "{\"mac\": \"%02x%02x%02x%02x%02x%02x\", \"layer\":%d, \"bt_addr\": \"%02x%02x%02x%02x%02x%02x\", \"bt_major\":%d, \"rssi\":%d, \"mesh_deep\":%d}",
-                        MAC2STR(sta_mac), mesh_layer, MAC2STR(data.addr), data.major, data.beacon_rssi, data.mesh_deep);
+            size = asprintf(&str_data, "{\"mac\": \"%02x%02x%02x%02x%02x%02x\", \"layer\":%d, \"bt_addr\": \"%02x%02x%02x%02x%02x%02x\", \"bt_major\":%d, \"rssi\":%d, \"mesh_deep\":%d, \"array_size\":%d}",
+                        MAC2STR(sta_mac), mesh_layer, MAC2STR(data.addr), data.major, data.beacon_rssi, data.mesh_deep, currently_array_size);
 
             ret = mwifi_write(NULL, &data_type, str_data, size, true);
             MDF_FREE(str_data);
@@ -137,42 +92,33 @@ void beacon_sended_controller(void *pVparameters) //Essa task roda todo segundo 
 {
     for(;;)
     {
-        printf("updatinggggggggggggggggggggg\n");
-        //btdm_controller_scan_duplicate_list_clear();
-        esp_ble_scan_dupilcate_list_flush();
-        //update_array();
-        vTaskDelay(pdMS_TO_TICKS(2000));
+       	update_array();
+        vTaskDelay(pdMS_TO_TICKS(ARRAY_CLEANER_DELAY));
     }
 }
 
-/*
+
 void update_array()
 {
-    uint8_t terminating_str[6] = SENDED_BEACON_ARRAY_TERMINATOR_ADDR;
-    uint32_t ulNotificationValue = ulTaskNotifyTake( pdTRUE, portMAX_DELAY);
-    if(ulNotificationValue == 1)
+    if( xSemaphoreTake( xSemaphore, pdMS_TO_TICKS(portMAX_DELAY) ) == pdTRUE )
     {
-        printf("Task is free to run\n");
-        
-        for(int i = 0; i < 300; i++)
-        {
-            currently_array_size += i;
-            if((esp_timer_get_time() - sended_beacons[i].sended_time) > MAX_LAST_SENDED_TIME)
-            {
-                delete_beacon_from_array(i);
-            }
-            if(array_is_equal(sended_beacons[i].addr, terminating_str, 6)) //Se chegou no último elemento do array, para tudo.
-            {
-                break;
-            }
-        }
+    	//printf("Task is free to run\n");
+    	for(int i = 0; i < currently_array_size; i++)
+    	{
+    		if((esp_timer_get_time() - sended_beacons[i].sended_time) > MAX_LAST_SENDED_TIME)
+    		{
+    			delete_beacon_from_array(i);
+    		}
+    	}
+    	xSemaphoreGive( xSemaphore );
     }
 }
+
 
 
 void delete_beacon_from_array(int index)
 {
-    for(int i = index; i < MAX_ARRAY_SIZE -1; i++)
+    for(int i = index; i < MAX_ARRAY_SIZE; i++)
     {
         sended_beacons[i] = sended_beacons[i + 1]; //Desloca todos os ítens subsequentes do ítem a ser deletado para a para a esquerda
     }
@@ -186,48 +132,50 @@ void add_data_to_arr(bt_addr_time *data, int time, esp_bd_addr_t addr, bool new_
     {
         if(new_beacon)
         {
-            sended_beacons[currently_array_size + 1] = sended_beacons[currently_array_size]; //Desloca o elemento que marca o fim do array para a direita.
+            //sended_beacons[currently_array_size + 1] = sended_beacons[currently_array_size]; //Desloca o elemento que marca o fim do array para a direita.
             memcpy(data->addr, addr, 6);
-            //currently_array_size ++;
+            currently_array_size ++;
         }
     data->sended_time = time;
-    currently_array_size ++;
     }
+
     else
     {
-        printf("PASSOU DE TREZENTOS!!! OVERFLOW\n");
+        //printf("PASSOU DE TREZENTOS!!! OVERFLOW\n");
     }
-    
 }
 
 
 bool is_beacon_recently_sended(esp_bd_addr_t addr)
 {
-    bool result = true;
-    
-    //printf("aeeeeeeeee\n");
-    for(int i = 0; i < MAX_ARRAY_SIZE -1; i++)
+    if( xSemaphoreTake( xSemaphore, ( TickType_t ) 10 ) == pdTRUE )
     {
-        if(array_is_equal((uint8_t*)&sended_beacons[i].addr, (uint8_t*)&addr, 6))
-        {
-            if((esp_timer_get_time() - sended_beacons[i].sended_time) > MAX_LAST_SENDED_TIME)
-            {
-                printf("TEMPO É MAIOR QUE O PERMITIDO!!!\n");
-                result = false;
-                add_data_to_arr(&sended_beacons[i], esp_timer_get_time(), sended_beacons[i].addr, false); //Se o beacon já está no array e o tempo é maior que o máximo, atualiza o tempo do msm na lista.
-            }
-        }
-        else //Se o beacon não estiver no array cria uma nova posição para ele no último local do array...
-        {
-            result = false;
-            printf("ADICIONANDO BEACON A LISTA!!! array size = %i\n", currently_array_size);
-            add_data_to_arr(&sended_beacons[currently_array_size], esp_timer_get_time(), addr, true);
-        }
-            
+		for(int i = 0; i <= currently_array_size; i++)
+		{
+			if(array_is_equal(sended_beacons[i].addr, addr, 6))
+			{
+				if((esp_timer_get_time() - sended_beacons[i].sended_time) > MAX_LAST_SENDED_TIME)
+				{
+				//	printf("TEMPO É MAIOR QUE O PERMITIDO!!! -- array size = %i\n", currently_array_size);
+					add_data_to_arr((uint8_t*)&sended_beacons[i], esp_timer_get_time(), sended_beacons[i].addr, false); //Se o beacon já está no array e o tempo é maior que o máximo, atualiza o tempo do msm na lista.
+					xSemaphoreGive( xSemaphore );
+					return false;
+				}
+				else
+				{
+					xSemaphoreGive( xSemaphore );
+					return true;
+				}
+			}
+		}
     }
-    xTaskNotifyGive(beacon_sended_controller_handle); //Terminou de verificar se o beacon foi recentemente enviado, libera o semaforo.
-    
-    return result;
+
+	//Este código só roda se o beacon não estiver dentro do array...
+	//printf("ADICIONANDO BEACON A LISTA!!! array size = %i\n", currently_array_size);
+	add_data_to_arr((uint8_t*)&sended_beacons[currently_array_size], esp_timer_get_time(), addr, true);
+	xSemaphoreGive( xSemaphore );
+	return false;
+
 }
 
 
@@ -236,17 +184,17 @@ bool array_is_equal(uint8_t *arr1, uint8_t *arr2, size_t tamanho)
     bool result = true;
     for(int i = 0; i < tamanho; i++)
     {
-        printf("%u,  %u\n", arr1[i], arr2[i]);
+        //printf("%u,  %u\n", arr1[i], arr2[i]);
         if(arr1[i] != arr2[i])
         {
             result = false;
-            break;
+          //  break;
         }
     }
     return result;
 }
 
-*/
+
 void receive_ble_data(esp_ble_gap_cb_param_t *ble_adv_data)
 {
     //printf("itens na fila = %i\n", uxQueueMessagesWaiting(ble_data_queue));
@@ -259,19 +207,20 @@ void receive_ble_data(esp_ble_gap_cb_param_t *ble_adv_data)
     uint16_t major = ENDIAN_CHANGE_U16(ibeacon_data->ibeacon_vendor.major);
     uint16_t minor = ENDIAN_CHANGE_U16(ibeacon_data->ibeacon_vendor.minor);
     ESP_LOGI(DEMO_TAG, "RSSI of packet:%d dbm", ble_adv_data->scan_rst.rssi);
-    
- //   if(!is_beacon_recently_sended(ble_adv_data->scan_rst.bda))
- //   {
+    esp_bd_addr_t coppied_addr;
+    memcpy(&coppied_addr, ble_adv_data->scan_rst.bda, 6); //Copiar os dados garantem que o mesmo não será alterado enquanto outras tasks o utilizam.
+    if(!is_beacon_recently_sended(coppied_addr))
+    {
         
-        printf("ó eu aqui óoooooooooooo\n");
+        //printf("ó eu aqui óoooooooooooo\n");
         send_msg.bat_level = 100;
         send_msg.beacon_rssi = ble_adv_data->scan_rst.rssi;
         send_msg.major = ibeacon_data->ibeacon_vendor.minor;
         send_msg.major = ibeacon_data->ibeacon_vendor.major;
         send_msg.mesh_deep = esp_mesh_get_layer();
-        memcpy(&send_msg.addr, ble_adv_data->scan_rst.bda, 6);
+        memcpy(&send_msg.addr, coppied_addr, 6);
         xQueueSend(ble_data_queue, (void*)&send_msg, pdMS_TO_TICKS(50));
- //   }
+    }
 }
 
 

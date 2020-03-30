@@ -24,7 +24,7 @@ src/flash_encrypt.o: \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/sys/cdefs.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/sys/stdio.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/platform_include/assert.h \
- /home/gardin/Documents/dev/ESP-MDF/ble_mesh/build/include/sdkconfig.h \
+ /home/gardin/Documents/dev/ble_mesh/build/include/sdkconfig.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/stdlib.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/machine/stdlib.h \
  /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/alloca.h \
@@ -113,7 +113,7 @@ src/flash_encrypt.o: \
 
 /home/gardin/esp/esp-mdf/esp-idf/components/newlib/platform_include/assert.h:
 
-/home/gardin/Documents/dev/ESP-MDF/ble_mesh/build/include/sdkconfig.h:
+/home/gardin/Documents/dev/ble_mesh/build/include/sdkconfig.h:
 
 /home/gardin/esp/esp-mdf/esp-idf/components/newlib/include/stdlib.h:
 
